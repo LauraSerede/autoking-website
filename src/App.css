@@ -1,38 +1,46 @@
-.App {
-  text-align: center;
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* --- LIGHT MODE THEME (DEFAULT) --- */
+:root {
+  --primary-red: #FF0000;
+  --bg-color: #ffffff;
+  --surface-color: #f9f9f9;
+  --text-color: #333333;
+  --text-light: #666666;
+  --text-on-dark: #ffffff;
+  --border-color: #dddddd;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* --- DARK MODE THEME --- */
+.dark-mode {
+  --primary-red: #FF0000; /* Red can often stay the same */
+  --bg-color: #121212; /* A dark, off-black for the body */
+  --surface-color: #1e1e1e; /* A slightly lighter dark for cards/headers */
+  --text-color: #f0f0f0; /* Light text for readability */
+  --text-light: #a0a0a0; /* A dimmer light text for subtitles */
+  --text-on-dark: #ffffff;
+  --border-color: #444444; /* Darker borders */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* --- Global Styles --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+  font-family: 'Poppins', sans-serif;
+  /* Use the variables */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  /* This makes the theme change smooth! */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }

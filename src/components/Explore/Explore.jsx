@@ -35,7 +35,7 @@ const CarCard = ({ car }) => (
 
 const Explore = () => {
   return (
-    <section className="explore-section">
+    <section id="explore" className="explore-section">
       <div className="container">
         <h2>Explore Vehicles</h2>
         <div className="car-carousel">

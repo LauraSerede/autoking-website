@@ -1,82 +1,108 @@
 /* src/components/Search/Search.css */
-.search-section {
-  padding: 60px 0;
-  background-color: #fff;
+.browse-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
 }
 
-.search-tabs {
+.browse-wrapper {
   display: flex;
-  border-bottom: 2px solid var(--medium-grey);
-  margin-bottom: 40px;
+  gap: 60px; /* Space between the two columns */
 }
 
-.search-tabs button {
-  background: none;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  color: var(--text-dark);
-  position: relative;
-  opacity: 0.7;
+.browse-column {
+  flex: 1; /* Each column takes up half the space */
+  min-width: 0; /* Prevents flexbox overflow issues */
 }
 
-.search-tabs button.active {
-  color: var(--text-dark);
-  font-weight: 600;
-  opacity: 1;
+.browse-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.search-tabs button.active::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: var(--primary-red);
+.browse-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
 }
 
-.search-panel h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+.browse-header h2 strong {
+  color: #f50606; /* The vibrant green color */
+  font-weight: 700;
 }
 
-.search-panel p {
-  color: #666;
-  margin-bottom: 20px;
+.show-all-link {
+  font-size: 0.9rem;
+  color: #f90808;
+  text-decoration: none;
+  border-bottom: 1px dotted #27ae60;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
 
-.search-input-wrapper {
-  position: relative;
-  max-width: 500px;
+.show-all-link:hover {
+  color: #229954;
+  border-bottom-color: #229954;
 }
 
-.search-input-wrapper i {
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  color: #999;
+.browse-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+  gap: 20px;
 }
 
-.search-input-wrapper input {
-  width: 100%;
-  padding: 15px 45px;
-  border: 1px solid #ddd;
+.browse-item-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.browse-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
   border-radius: 8px;
-  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.clear-btn {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  color: #999;
-  cursor: pointer;
+.browse-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.browse-item img {
+  height: 45px; /* Consistent height for all images */
+  margin-bottom: 15px;
+  object-fit: contain; /* Prevents images from stretching */
+}
+
+.browse-item p {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* --- Responsive Design --- */
+
+/* For tablets and smaller devices */
+@media (max-width: 992px) {
+  .browse-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 576px) {
+  .browse-header h2 {
+    font-size: 1.5rem;
+  }
+  .browse-grid {
+    /* Show 2 items per row on mobile for better visibility */
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
