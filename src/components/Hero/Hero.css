@@ -1,6 +1,5 @@
-/* src/components/Hero/Hero.css */
 .hero-container {
-  height: 90vh; /* Adjust height as needed */
+  height: 85vh;
   width: 100%;
   position: relative;
   display: flex;
@@ -22,46 +21,151 @@
   z-index: 1;
 }
 
-/* MODIFICATION: New wrapper for vertical stacking */
 .hero-content-wrapper {
   position: relative;
   z-index: 2; /* Make sure content is above the overlay */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* This is key! */
-  height: 100%;
-  padding-top: 15vh; /* Push content down from the top */
-  padding-bottom: 5vh; /* Give space for the filter at the bottom */
+  justify-content: space-between;
+  height: 85%;
+  padding-top: 20vh; 
+  padding-bottom: 5vh;
   text-align: left;
 }
 
 .hero-content {
-  /* This content will now sit at the top of the available space */
+  margin: 1.5rem;
 }
 
 .hero-content h1 {
   font-size: 4rem;
   font-weight: 700;
   line-height: 1.1;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.02em;
 }
 
 .hero-content p {
   font-size: 1.2rem;
   max-width: 500px;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero-btn {
-  background-color: red; /* Match the green from the filter */
+  background-color: red;
   color: white;
-  padding: 12px 30px;
+  padding: 15px 35px;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+  border: 2px solid transparent;
 }
 
 .hero-btn:hover {
-  background-color: #1abc9c;
+  background-color: #cc0000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+}
+
+.hero-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+    max-width: 450px;
+  }
+  
+  .hero-btn {
+    padding: 14px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    height: 100vh;
+  }
+  
+  .hero-content-wrapper {
+    padding-top: 15vh; /* Increased spacing for mobile */
+    padding-bottom: 3vh;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+    text-align: left; /* Keep left-aligned on mobile */
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-btn {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content-wrapper {
+    padding-top: 12vh; /* Even more spacing for small mobile */
+    padding-bottom: 2vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-btn {
+    padding: 10px 24px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-content-wrapper {
+    padding-top: 10vh; /* Maximum spacing for very small screens */
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.8rem;
+  }
+  
+  .hero-btn {
+    padding: 8px 20px;
+    font-size: 0.7rem;
+  }
 }

@@ -94,15 +94,100 @@
     flex-direction: column;
     gap: 40px;
   }
+  
+  .browse-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .browse-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+}
+
+/* For medium tablets */
+@media (max-width: 768px) {
+  .browse-section {
+    padding: 40px 15px;
+  }
+  
+  .browse-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .browse-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .browse-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .browse-item img {
+    height: 40px;
+  }
+  
+  .browse-item p {
+    font-size: 0.8rem;
+  }
 }
 
 /* For mobile devices */
 @media (max-width: 576px) {
-  .browse-header h2 {
-    font-size: 1.5rem;
+  .browse-section {
+    padding: 30px 10px;
   }
+  
+  .browse-wrapper {
+    gap: 30px;
+  }
+  
+  .browse-header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .show-all-link {
+    font-size: 0.8rem;
+  }
+  
   .browse-grid {
-    /* Show 2 items per row on mobile for better visibility */
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .browse-item {
+    padding: 8px;
+  }
+  
+  .browse-item img {
+    height: 35px;
+    margin-bottom: 10px;
+  }
+  
+  .browse-item p {
+    font-size: 0.75rem;
+  }
+}
+
+/* For very small mobile devices */
+@media (max-width: 360px) {
+  .browse-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .browse-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8px;
+  }
+  
+  .browse-item img {
+    height: 30px;
+  }
+  
+  .browse-item p {
+    font-size: 0.7rem;
   }
 }

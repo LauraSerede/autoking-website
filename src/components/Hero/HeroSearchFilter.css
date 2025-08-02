@@ -80,3 +80,100 @@
 .search-button:hover {
   background-color: #1abc9c; /* A slightly lighter green for hover */
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-search-filter-container {
+    max-width: 95%;
+    padding: 0 20px 15px 20px;
+  }
+  
+  .filter-inputs {
+    gap: 10px;
+  }
+  
+  .input-group select,
+  .input-group input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-search-filter-container {
+    padding: 0 15px 15px 15px;
+  }
+  
+  .filter-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .tab-btn {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  .filter-inputs {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .input-group {
+    width: 100%;
+  }
+  
+  .search-button {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-search-filter-container {
+    padding: 0 10px 15px 10px;
+  }
+  
+  .tab-btn {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    min-width: 100px;
+  }
+  
+  .input-group select,
+  .input-group input {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .search-button {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .tab-btn {
+    font-size: 0.7rem;
+    padding: 8px 10px;
+    min-width: 80px;
+  }
+  
+  .input-group select,
+  .input-group input {
+    font-size: 0.7rem;
+    padding: 6px 8px;
+  }
+  
+  .search-button {
+    font-size: 0.7rem;
+    padding: 8px 12px;
+  }
+}
